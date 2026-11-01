@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Six Months of Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--bg2:#000;--gold:#d4af37;--gold2:#f6e3a1;--rose:#e9cf94;--ivory:#f3ead7;--muted:#a9a08c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000}}
+:root[data-theme="dark"]{--bg:#000}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:#000 radial-gradient(ellipse at 50% 35%,rgba(212,175,55,.08),#000 62%);color:var(--ivory);font:300 1.05rem/1.8 'Jost',system-ui,sans-serif;overflow-x:hidden}
+#stage{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:12vh 1.5rem}
+h1,h2{font-family:'Bodoni Moda','Didot',Georgia,serif;font-weight:400;line-height:1.1}
+h1{font-size:clamp(2.6rem,9vw,6.2rem);letter-spacing:.02em;background:linear-gradient(100deg,#8a6a1f 5%,#d4af37 25%,#fff3c4 45%,#d4af37 65%,#8a6a1f 90%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:sheen 7s ease-in-out infinite}
+@keyframes sheen{50%{background-position:100% 0}}
+.sub{font-family:'Bodoni Moda','Didot',Georgia,serif;font-style:italic;font-size:clamp(1.3rem,3.2vw,2rem);color:var(--rose);margin-top:1.2rem}
+.hero{justify-content:flex-end;padding-bottom:14vh}
+.hint{margin-top:2.5rem;color:var(--muted);font-size:.9rem;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(8px)}}
+h2{font-size:clamp(2.1rem,6vw,4rem);color:var(--gold2);margin-bottom:1.6rem}
+.chapter{max-width:34rem;padding:2.8rem 2.2rem;border:1px solid rgba(212,175,55,.6);border-radius:2px 36px 2px 36px;background:linear-gradient(160deg,rgba(212,175,55,.1),rgba(0,0,0,.7));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 30px 80px #000,0 0 50px rgba(212,175,55,.14),inset 0 0 0 6px #000,inset 0 0 0 7px rgba(212,175,55,.28);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out}
+.chapter p{font-size:1.1rem}
+.chapter p+p{margin-top:1rem}
+.vow{max-width:40rem}
+.vow p{font-family:'Bodoni Moda','Didot',Georgia,serif;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.5;color:var(--ivory)}
+.vow em{color:var(--rose)}
+.count{font-family:'Bodoni Moda','Didot',Georgia,serif;font-size:clamp(5rem,22vw,14rem);line-height:1;color:var(--gold);text-shadow:0 0 60px rgba(217,180,106,.35)}
+.btn{margin-top:2.4rem;padding:1rem 2.6rem;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--gold2);font:400 1rem 'Jost',sans-serif;letter-spacing:.08em;cursor:pointer;transition:background .3s,color .3s,transform .3s}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:#000;transform:scale(1.04);outline:none}
+.fin{font-family:'Bodoni Moda','Didot',Georgia,serif;font-size:clamp(2.4rem,8vw,5.5rem);color:var(--rose);font-style:italic;margin-top:1.5rem}
+.rv{opacity:0;transform:translateY(28px);filter:blur(8px);transition:opacity 2.8s cubic-bezier(.22,.61,.36,1),transform 2.8s cubic-bezier(.22,.61,.36,1),filter 2.4s ease}
+.rv.in{opacity:1;transform:none;filter:none}
+.chapter{position:relative}.chapter::before{content:"✦";position:absolute;top:-.85rem;left:50%;transform:translateX(-50%);background:#000;padding:0 .9rem;color:var(--gold);font-size:1rem}
+h2::after{content:"";display:block;width:4.5rem;height:1px;margin:1.1rem auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.vow{padding:3.2rem 0;border-top:1px solid rgba(212,175,55,.5);border-bottom:1px solid rgba(212,175,55,.5)}
+.count{text-shadow:0 0 80px rgba(212,175,55,.5),0 0 20px rgba(212,175,55,.25)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at center,transparent 55%,#000 100%)}
+.mu{position:fixed;top:calc(env(safe-area-inset-top,0px) + 1rem);right:1rem;z-index:5;padding:.55rem 1.1rem;border:1px solid rgba(212,175,55,.6);border-radius:999px;background:rgba(0,0,0,.65);color:var(--gold2);font:400 .85rem 'Jost',sans-serif;letter-spacing:.06em;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.mu:hover,.mu:focus-visible{background:var(--gold);color:#000;outline:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body>
+<canvas id="stage" aria-hidden="true"></canvas>
+<button class="mu" id="mu" type="button" aria-pressed="false">♪ Music off</button>
+<main>
+<section class="hero">
+<h1>Six Months<br>of Us</h1>
+<p class="sub">Happy anniversary, my baccha.</p>
+<p class="hint">tap anywhere for music, then scroll slowly</p>
+</section>
+
+<section>
+<div class="chapter rv">
+<h2>The ups</h2>
+<p>The laughs that left us breathless, the plans we whispered, the days that felt like they were made only for us.</p>
+</div>
+</section>
+
+<section>
+<div class="chapter rv">
+<h2>The downs</h2>
+<p>We had hard days too. A lot happened, and not all of it was easy.</p>
+<p>And still, here we are. Together.</p>
+</div>
+</section>
+
+<section>
+<div class="vow rv">
+<p>Every single day, every single hour, every single minute, every single second, I love you <em>more and more and more.</em></p>
+</div>
+</section>
+
+<section>
+<div class="chapter rv">
+<h2>Grateful</h2>
+<p>I’m so lucky to have you in my life. I’m so grateful that you chose me as your partner.</p>
+<p>I love you more than anything in this world.</p>
+</div>
+</section>
+<section>
+<div class="vow rv"><p>Bhondu, you are my <em>whole world.</em> You mean the world to me, and everything beautiful in it begins with you.</p></div>
+</section>
+<section>
+<div class="chapter rv"><h2>My Bhondu</h2>
+<p>You are my peace on the loudest days, my smile on the hardest ones, and the one place that always feels like home.</p>
+<p>With you, ordinary moments become my favorite memories.</p>
+<p>You are my today, my tomorrow, and all the days after.</p>
+</div>
+</section>
+
+<section>
+<div class="count rv" id="n">6</div>
+<h2 class="rv" style="margin-top:1rem">months, and counting forever</h2>
+<button class="btn rv" id="b">Open my heart</button>
+<p class="fin rv" id="f" style="opacity:0">Happy anniversary, Bhondu.<br>You mean the world to me.<br>I love you more than anything in this world, baccha.<br>Forever yours, Dev</p>
+</section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.25});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+document.querySelectorAll('.chapter').forEach(function(c){
+c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');c.style.setProperty('--rx',(-((e.clientY-r.top)/r.height-.5))*10+'deg')});
+c.addEventListener('mouseleave',function(){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});
+});
+
+var burst=function(){};
+if(typeof THREE==='undefined')return;
+try{
+var cv=document.getElementById('stage');
+var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+R.setPixelRatio(Math.min(devicePixelRatio,2));
+var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(45,1,.1,100);C.position.z=9;
+
+var sh=new THREE.Shape();
+sh.moveTo(0,-2.2);
+sh.bezierCurveTo(-.3,-1.7,-2.6,-.6,-2.6,1);
+sh.bezierCurveTo(-2.6,2.4,-.9,2.9,0,1.6);
+sh.bezierCurveTo(.9,2.9,2.6,2.4,2.6,1);
+sh.bezierCurveTo(2.6,-.6,.3,-1.7,0,-2.2);
+var TT=96,PP=56,vp=[],ix=[];
+for(var j=0;j<=PP;j++){var ph=j/PP*Math.PI,sp2=Math.sin(ph),cp=Math.cos(ph);
+for(var i=0;i<TT;i++){var t=i/TT*6.28318,hx=16*Math.pow(Math.sin(t),3),hy=13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t);
+vp.push(hx*sp2/6.2,hy*sp2/6.2,9*cp/6.2)}}
+for(var j=0;j<PP;j++)for(var i=0;i<TT;i++){var a=j*TT+i,b=j*TT+(i+1)%TT,c=(j+1)*TT+i,d=(j+1)*TT+(i+1)%TT;ix.push(a,b,c,b,d,c)}
+var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(vp,3));g.setIndex(ix);g.computeVertexNormals();
+g.center();
+var gold=new THREE.MeshStandardMaterial({color:0xc00024,metalness:.25,roughness:.3,emissive:0xd00020,emissiveIntensity:.7});
+var heart=new THREE.Mesh(g,gold);S.add(heart);
+var gc=document.createElement('canvas');gc.width=gc.height=128;var gx=gc.getContext('2d'),gr=gx.createRadialGradient(64,64,0,64,64,64);gr.addColorStop(0,'rgba(255,40,60,.85)');gr.addColorStop(.35,'rgba(220,0,40,.35)');gr.addColorStop(1,'rgba(120,0,20,0)');gx.fillStyle=gr;gx.fillRect(0,0,128,128);
+var halo=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(gc),blending:THREE.AdditiveBlending,depthWrite:false,transparent:true}));halo.scale.set(6,6,1);S.add(halo);
+var HL=new THREE.PointLight(0xff1030,2.4,14);S.add(HL);
+
+var rg=new THREE.Group();
+[2.1,2.6,3.1].forEach(function(r,i){
+var t=new THREE.Mesh(new THREE.TorusGeometry(r,.008,12,160),new THREE.MeshBasicMaterial({color:i==1?0xf6e3a1:0xd4af37,transparent:true,opacity:.7}));
+t.rotation.x=Math.PI/2+i*.5;t.rotation.y=i*.7;
+var ob=new THREE.Mesh(new THREE.SphereGeometry(.06,12,12),new THREE.MeshBasicMaterial({color:0xf6e3a1}));ob.userData.r=r;ob.userData.sp=.6+i*.25;t.add(ob);rg.add(t)});
+S.add(rg);
+
+var N=900,pos=new Float32Array(N*3),vel=[];
+for(var i=0;i<N;i++){var a=Math.random()*6.28,r=3+Math.random()*14;pos[i*3]=Math.cos(a)*r;pos[i*3+1]=(Math.random()-.5)*22;pos[i*3+2]=Math.sin(a)*r-4;vel.push(.003+Math.random()*.008)}
+var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+var pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xf6e3a1,size:.08,transparent:true,opacity:.5,depthWrite:false}));
+S.add(pts);
+var SN=1800,sp=new Float32Array(SN*3);for(var i=0;i<SN;i++){var u=Math.random()*6.283,v=Math.acos(2*Math.random()-1),rr=25+Math.random()*35;sp[i*3]=rr*Math.sin(v)*Math.cos(u);sp[i*3+1]=rr*Math.cos(v);sp[i*3+2]=rr*Math.sin(v)*Math.sin(u)}
+var sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(sp,3));var stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xffffff,size:.12,transparent:true,opacity:.85,depthWrite:false}));S.add(stars);
+
+S.add(new THREE.AmbientLight(0xfff0d0,.22));
+var L1=new THREE.PointLight(0xffe2a8,1.0,40);L1.position.set(5,5,8);S.add(L1);
+var L2=new THREE.PointLight(0xc9a24a,.7,40);L2.position.set(-6,-3,6);S.add(L2);
+
+var mx=0,my=0,sc=0,pulse=0;
+addEventListener('mousemove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+addEventListener('scroll',function(){sc=scrollY/Math.max(1,document.body.scrollHeight-innerHeight)});
+function size(){R.setSize(innerWidth,innerHeight,false);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix()}
+addEventListener('resize',size);size();
+
+var t0=0;
+function loop(t){
+requestAnimationFrame(loop);
+var s=t*.001,beat=1+Math.max(0,Math.sin(s*2.2))*.05+pulse;
+pulse*=.94;
+heart.scale.setScalar(beat*.55*(1-sc*.3));
+heart.rotation.y=s*.5+mx*.8+sc*12.56;
+heart.rotation.x=my*.5+Math.sin(s*.6)*.1;
+heart.position.y=Math.sin(s)*.2+sc*-1.5;
+rg.children.forEach(function(t,i){t.rotation.x+=.004*(i+1);t.rotation.y+=.003*(3-i);var ob=t.children[0],a=s*ob.userData.sp+i*2;ob.position.set(Math.cos(a)*ob.userData.r,Math.sin(a)*ob.userData.r,0)});rg.rotation.z=s*.15+sc*2;rg.position.y=heart.position.y;
+halo.position.y=heart.position.y;halo.scale.setScalar(6+Math.sin(s*2.2)*.4+pulse*3);HL.position.set(0,heart.position.y,3);
+stars.rotation.y=s*.01+sc*.6;
+var p=pg.attributes.position.array;
+for(var i=0;i<N;i++){p[i*3+1]+=vel[i];if(p[i*3+1]>11)p[i*3+1]=-11}
+pg.attributes.position.needsUpdate=true;
+pts.rotation.y=s*.03;
+C.position.x=mx*1.2;C.position.y=-my*.8;C.lookAt(0,0,0);
+R.render(S,C);
+}
+requestAnimationFrame(loop);
+burst=function(){pulse=.45};
+}catch(e){}
+
+document.getElementById('b').addEventListener('click',function(){
+burst();var f=document.getElementById('f');f.style.opacity=1;f.classList.add('in');this.style.display='none';
+f.scrollIntoView({behavior:'smooth',block:'center'});
+});
+})();
+</script>
+<script>
+(function(){
+var AC,master,on=false,timer,idx=0,userOff=false,btn=document.getElementById('mu');
+var chords=[[48,55,59,64],[45,52,55,60],[41,48,52,57],[43,50,55,59]];
+var pat=[0,1,2,3,2,1,3,2,0,2,1,3,2,1,2,3];
+function hz(m){return 440*Math.pow(2,(m-69)/12)}
+function note(f,t,d,ty,v,a){var o=AC.createOscillator(),g=AC.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+a);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.1)}
+function chord(){
+if(!on)return;
+var c=chords[idx%4],t=AC.currentTime+.05;idx++;
+c.forEach(function(m){note(hz(m),t,9.5,'triangle',.05,2.2)});
+for(var k=0;k<16;k++){note(hz(c[pat[k]]+12),t+k*.5,2.6,'sine',.11,.02);if(k%4===0)note(hz(c[pat[k]]+24),t+k*.5+.25,2.2,'sine',.04,.02)}
+timer=setTimeout(chord,8000);
+}
+function init(){
+var Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx)return false;
+AC=new Ctx();master=AC.createGain();master.gain.value=0;
+var len=AC.sampleRate*3,ir=AC.createBuffer(2,len,AC.sampleRate);
+for(var c=0;c<2;c++){var d=ir.getChannelData(c);for(var i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3)}
+var rev=AC.createConvolver();rev.buffer=ir;var wet=AC.createGain();wet.gain.value=.7;
+master.connect(AC.destination);master.connect(rev);rev.connect(wet);wet.connect(AC.destination);
+return true;
+}
+function set(v){
+if(v){
+if(!AC&&!init())return;
+on=true;AC.resume();master.gain.cancelScheduledValues(AC.currentTime);master.gain.linearRampToValueAtTime(.55,AC.currentTime+3);
+clearTimeout(timer);chord();
+['pointerdown','keydown','touchstart'].forEach(function(e){document.removeEventListener(e,auto)});
+}else{
+on=false;clearTimeout(timer);
+if(AC){master.gain.cancelScheduledValues(AC.currentTime);master.gain.linearRampToValueAtTime(0,AC.currentTime+1.2)}
+}
+btn.textContent=on?'♪ Music on':'♪ Music off';btn.setAttribute('aria-pressed',on);
+}
+function auto(e){if(userOff||(e.target&&e.target.closest&&e.target.closest('#mu')))return;set(true)}
+['pointerdown','keydown','touchstart'].forEach(function(e){document.addEventListener(e,auto)});
+btn.addEventListener('click',function(){if(on){userOff=true;set(false)}else{userOff=false;set(true)}});
+})();
+</script>
+</body>
+</html>
